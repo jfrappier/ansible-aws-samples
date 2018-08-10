@@ -1,0 +1,4 @@
+sg-list
+  - { port: '8060', ip: '192.168.1.1', desc: "jons house" }
+  - { port: '8061', ip: '172.16.31.1', desc: "abes hosue" }
+
