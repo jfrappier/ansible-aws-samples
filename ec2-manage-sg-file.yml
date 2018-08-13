@@ -28,4 +28,4 @@
       rules_egress:
         - proto: all
           cidr_ip: 0.0.0.0/0
-    with_items: "{{ ips.sglist }}"
+    with_items: "{{ ips.awssg }}"
