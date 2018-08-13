@@ -9,7 +9,7 @@
   tasks:
   - name: include sg list
     include_vars:
-      file: ./vars-ec2-manage-sg.yml
+      file: "{{ sglist }}"
       name: ips
   - name: manage/create security group
     ec2_group:
