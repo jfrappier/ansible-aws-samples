@@ -1,0 +1,22 @@
+- hosts: localhost
+  connection: local
+  gather_facts: true
+  vars:
+    awsaccess: "{{ lookup('env','awsaccess') }}"
+    awssecret: "{{ lookup('env','awssecret') }}"
+
+  tasks:
+    - name: create instance
+      ec2:
+        state: present
+        #aws_access_key: "{{ awsaccess }}"
+        #aws_secret_key: "{{ awssecret }}"
+        key_name: jfrap-web2
+        aws_region: us-east-1
+        instance_type: t2.micro
+        image: ami-0922553b7b0369273
+        group_id: sg-0974733a071373952
+        count: 1
+        vpc_subnet_id: subnet-853280e2
+        assign_public_ip: yes
+        instance_initiated_shutdown_behavior: stop

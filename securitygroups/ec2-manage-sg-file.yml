@@ -1,3 +1,4 @@
+#Example ansible-playbook foo.yml --extra-vars "sglist=list.yml"
 - hosts: localhost
   connection: local
   gather_facts: true
